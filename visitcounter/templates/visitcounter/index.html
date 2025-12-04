@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>VisitCounter</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 18px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+        button:hover { background: #0056b3; }
+        .box { border: 2px solid #ddd; padding: 20px; margin: 20px auto; max-width: 400px; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Odwiedziny strony (Baza Danych):</h2>
+        <h1 style="color: red;">{{ visit_count }}</h1>
+    </div>
+
+    <div class="box">
+        <h2>Licznik kliknięć (JavaScript):</h2>
+        <p>Kliknięcia: <span id="click-count" style="font-weight: bold;">0</span></p>
+        <button id="click-btn">Kliknij mnie!</button>
+    </div>
+
+    <script>
+        let count = 0;
+        // Pobieramy przycisk i nasłuchujemy kliknięcia
+        document.getElementById("click-btn").addEventListener("click", () => {
+            count++;
+            // Aktualizujemy tekst w spanie
+            document.getElementById("click-count").textContent = count;
+        });
+    </script>
+
+</body>
+</html>
