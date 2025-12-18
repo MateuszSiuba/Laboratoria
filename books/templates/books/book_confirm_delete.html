@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuń książkę</title>
+</head>
+<body>
+    <h1>Czy na pewno usunąć?</h1>
+    <p>Chcesz usunąć książkę: "<strong>{{ book.title }}</strong>"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" style="color: white; background-color: red; padding: 10px;">Tak, usuń</button>
+        <a href="{% url 'book_list' %}">Nie, anuluj</a>
+    </form>
+</body>
+</html>

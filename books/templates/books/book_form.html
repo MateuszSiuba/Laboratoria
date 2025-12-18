@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz Książki</title>
+    <style>
+        body { font-family: sans-serif; max-width: 500px; margin: 50px auto; }
+        input[type="text"], input[type="date"] { width: 100%; padding: 8px; margin: 5px 0 15px; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edytuj książkę{% else %}Dodaj nową książkę{% endif %}</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Zapisz</button>
+        <a href="{% url 'book_list' %}" style="margin-left: 10px;">Anuluj</a>
+    </form>
+</body>
+</html>
