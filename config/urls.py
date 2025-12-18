@@ -7,4 +7,5 @@ urlpatterns = [
     path('frontend_demo/', include('frontend_demo.urls')), 
     path('visit/', include('visitcounter.urls')),
     path('books/', include('books.urls')),
+    path('apidemo/', include('api_demo.urls')),
 ]
